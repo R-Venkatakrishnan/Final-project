@@ -1,0 +1,53 @@
+﻿@model FinalProject.Models.user
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<style>
+    body {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqhG3oXZJMdiHKLGc450PHjJV-fQdMyx95yQ&usqp=CAU" );
+        background-size: cover;
+    }
+</style>
+<br />
+<div class="bg-light">
+<h1 style="color:black"><img src="~/NewFolder/WhatsApp Image 2022-05-09 at 11.17.49 AM.jpeg" width="80" height="80" /> Stone Clinic Login </h1></div>
+<br /><br/><br />
+@*<div align="right">*@
+<table border="0">
+    <tr>
+        <td width="1000" style="font-size:20px;color:white">
+
+            <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STONE CLINIC THE WORD OF CARE.....</h4>
+            <h6>The best of modern healthcare to ensure you stay healthy, always.....</h6>
+
+
+        </td>
+
+       
+        <td>
+            @using (Html.BeginForm("validate", "Home", FormMethod.Post))
+            {
+                <br />
+                <b> &nbsp; &nbsp; Username: </b><input type="Text" asp-for="Username" required /> <br />
+                @Html.ValidationMessageFor(m => m.Username)<br />
+
+                <b> &nbsp; &nbsp;Password : </b><input type="password" asp-for="Password" required /> <br /><br />
+                @Html.ValidationMessageFor(m => m.Password)
+                <input type="submit" class="btn-dark" value="Login" />
+                @*<input type="button" value="Sign-up" onclick="location.href='@Url.Action("Homepage1","Home")'" class="btn-dark" />*@
+            }
+
+
+
+
+        </td>
+       
+    </tr>
+   
+</table>
+
+
+

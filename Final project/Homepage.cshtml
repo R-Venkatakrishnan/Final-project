@@ -1,0 +1,74 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<link href="~/css/StyleSheet2.css" rel="stylesheet" />
+<style>
+    body {
+        background-image: url(" https://img.freepik.com/free-photo/blur-hospital_1203-7972.jpg?w=2000 " );
+        background-size: cover;
+    }
+</style>
+<link href="~/css/StyleSheet.css" rel="stylesheet" />
+<body>
+    <header style="background-color:lightgray ;font-size:40px;color:coral">
+        <b> <img src="~/NewFolder/WhatsApp Image 2022-05-09 at 11.17.49 AM.jpeg" width="70" ;height="70" /> StoneClinic</b>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="dropdown" ;style=" border-bottom-left-radius: 20px; border-bottom-right-radius: 20px">
+            <button class="dropbtn">MENU</button>
+            <div class="dropdown-content">
+                <a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="Addddoctor" role="button">ADD DOCTOR</a>
+                <a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="Addpatient" role="button">ADD PATIENT</a>
+                <a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="Appointment" role="button">FIX APPOINTMENT</a>
+                <a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="Displayappointment" role="button">CANCEL APPOINTMENT</a>
+                <a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="Index" role="button">LOGOUT</a>
+            </div>
+
+            @*<img src="~/NewFolder/WhatsApp Image 2022-05-09 at 11.17.49 AM.jpeg" width="80" ;height="80" />*@
+
+        </div>
+    </header>
+    @*<div class="menu-bar" style=" border-bottom-left-radius: 100px; border-bottom-right-radius: 100px">
+        <img src="~/NewFolder/WhatsApp Image 2022-05-09 at 11.17.49 AM.jpeg" width="80" ;height="80" />
+        <ul>
+            <li> <a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="Addddoctor" role="button">ADD DOCTOR</a> </li>
+
+            <li> <a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="Addpatient" role="button">ADD PATIENT</a> </li>
+            <li><a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="Appointment" role="button">FIX APPOINTMENT</a></li>&nbsp;&nbsp;&nbsp;&nbsp;
+            <li><a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="Displayappointment" role="button">CANCEL APPOINTMENT</a> </li>
+        </ul>
+    </div>*@<br /><br />
+    <center>  <h1 style="font-size:30px;color:orange;">-----------------------Welcome To StoneClinic-----------------------</h1></center>
+    <p style="font-size:20px;">
+        A healthcare journey that began with one pharmacy seven decades ago, we have grown into one of the largest network of eye care providers today.
+        StoneClinic network is a premier institution of  Clinic in the country and we have been making a difference to over 6 million patients every year, making us a household name in India today.
+        In 2002, we set up our first health care Clinic in Trichy and today we have 100+ super speciality eye care hospitals in our network.
+        Our Clinic are spread across all the states in India, continuously expanding our network to reach the masses.
+        We have been certified as the “World’s Largest Health Care provider with the maximum number of stand-alone surgical centres” in 2011 by Frost & Sullivan.
+    </p>
+
+    <center><h2 style="font-size:30px;color:orange">-------------------------Center of Excellence-------------------------</h2></center>
+
+    <center>
+        <p>  General</p>
+        <p>  Ortho</p>
+        <p>  Internal-Medicine</p>
+        <p>  Pediatrician</p>
+        <p>  Ophthomology</p>
+    </center>
+
+
+    <div>
+        <center><h2 style="font-size:30px;color:orange;">-----------------------------Contact Us------------------------------- </h2></center>
+        <center>
+            <p>Email Id: stoneclinic@gmail.com </p>
+            <p>Phone : 044(22482574),(22482575)</p>
+            <p>Cell : +91 9283448855</p>
+        </center>
+    </div>
+    @*<div style="color:orange"><center>___________________________________________________________________________________________________________________________________</center></div><br />*@
+    <div>
+        <marquee><mark>Our Locations: Chennai: Pallavaram,T.Nagar,Omr | Tanjore | Banglore: Whitefield   </mark> </marquee>
+    </div>
+</body>

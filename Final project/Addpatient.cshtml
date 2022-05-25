@@ -1,0 +1,94 @@
+﻿@model FinalProject.Models.Addpatient
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@using (Html.BeginForm("PatientAD", "Home", FormMethod.Post))
+{
+    <link href="~/css/StyleSheet3.css" rel="stylesheet" />
+    <header>
+        <div class="menu-bar" style=" border-bottom-left-radius: 100px; border-bottom-right-radius: 100px">
+            <img src="~/NewFolder/WhatsApp Image 2022-05-09 at 11.17.49 AM.jpeg" width="80" ;height="80" />
+
+            <ul>
+
+
+                <li>  <a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="Homepage" role="button">HOMEPAGE</a>  </li>
+
+                <li><a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="Addddoctor" role="button">ADD Doctor</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <li><a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="Appointment" role="button">FIX APPOINTMENT</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <li><a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="Displayappointment" role="button">CANCEL APPOINTMENT</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    <style>
+        body {
+            background-image: url(" https://i.pinimg.com/originals/3f/93/9a/3f939af4dda1ec2988b9c6ce3bdb3886.jpg");
+            background-size: cover;
+        }
+    </style>
+    <br /><br />
+    <center><h1><mark>ADD PATIENT</mark></h1></center>
+    <br />
+    <center>
+        <div style="background-color:darkorange;
+    border-bottom-right-radius: 100% 100%;
+
+    border-top-left-radius: 100% 100%">
+
+
+            <table cellpadding="10" cellspacing="5">
+
+                <tr>
+                    <td height="50"><b>First Name :</b></td>
+                    @*<td height="40">@Html.TextBoxFor(m => m.FirstName)</td>*@
+                    <td height="50"><input asp-for="FirstName" class="form-control" required /></td>
+                </tr>
+                <tr>
+                    <td height="50"><b>Last Name :</b></td>
+                    @*<td height="40">@Html.TextBoxFor(m => m.LastName)</td>*@
+                    <td height="50"><input asp-for="LastName" class="form-control" required /></td>
+                </tr>
+                <tr>
+                    <td height="40"><b>Sex : </b></td>
+                    <td height="40">
+                        @Html.RadioButtonFor(m => m.Sex, "M")M
+                        @Html.RadioButtonFor(m => m.Sex, "F")F
+                        @Html.RadioButtonFor(m => m.Sex, "O")O
+                    </td>
+                </tr>
+
+
+                @*<tr>
+                    <td height="40"><b>Age :</b></td>
+                    <td height="40">
+                        <input asp-for="Age" class="form-control" required/>
+
+                    </td>*@
+
+                <tr>
+                    <td height="60"><b>Date of Birth : &nbsp;&nbsp;</b></td>
+                    <td height="60">
+                        <input asp-for="DateofBirth" type="date" class="form-control" required/>
+
+                    </td>
+
+                </tr>
+            </table>
+        </div>
+    </center>
+    <center>
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        <input type="submit" value="Submit" class="btn btn-dark" />  @*<input type="submit" value="Logout" onclick="location.href = '@Url.Action("Index","Home")'" class="btn btn-dark" />*@
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </center>
+}

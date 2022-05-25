@@ -1,0 +1,146 @@
+﻿@model FinalProject.Models.Appointment
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+}
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script src="~/js/site.js"></script>
+
+<style>
+    body {
+        background-image: url(" https://i.pinimg.com/originals/3f/93/9a/3f939af4dda1ec2988b9c6ce3bdb3886.jpg");
+        background-size: cover;
+    }
+</style>
+<script language="javascript">
+    $(document).ready(function () {
+        $("#date_picker").datepicker({
+            minDate: 0
+        });
+    });
+</script>
+
+@using (Html.BeginForm("ADDAPPOINTMENT", "Home", FormMethod.Post))
+{
+    <link href="~/css/StyleSheet3.css" rel="stylesheet" />
+    <header>
+        <div class="menu-bar" style=" border-bottom-left-radius: 100px; border-bottom-right-radius: 100px">
+            <img src="~/NewFolder/WhatsApp Image 2022-05-09 at 11.17.49 AM.jpeg" width="80" ;height="80" />
+
+            <ul>
+
+
+                <li> <a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="Homepage" role="button">HOMEPAGE</a> </li>
+
+                <li><a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="Addddoctor" role="button">ADD Doctor</a></li>
+                <li><a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="Addpatient" role="button">ADD PATIENT</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <li><a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="Displayappointment" role="button">CANCEL APPOINTMENT</a></li>
+            </ul>
+        </div>
+    </header>
+    <br />
+    <br />
+    <center><h1><mark><b>APPOINTMENT</b></mark></h1></center>
+    <br />
+    <br />
+    <center>
+        <div style="background-color: darkorange; border-bottom-left-radius: 100px; border-bottom-right-radius: 100px; border-top-left-radius:100px;border-top-right-radius:100px">
+            <table class="circle" width="500px" @*cellpadding="5" cellspacing="5"*@>
+
+                <tr>
+                    <td height="40"><b>PatientID :</b></td>
+                    @*<td height="40">@Html.TextBoxFor(m => m.PatientID)</td>*@
+                    <td height="40"><input asp-for="PatientID" class="form-control" required /></td>
+                </tr>
+                <tr>
+                    <td height="40"><b>Specialization : &nbsp;&nbsp;</b></td>
+                    <td height="40">
+                        <details>
+                            <summary>Specialization</summary>
+                            @Html.RadioButtonFor(m => m.SpecializationRequired, "General")General <br />
+                            @Html.RadioButtonFor(m => m.SpecializationRequired, "Internal Medicine")Internal Medicine <br />
+                            @Html.RadioButtonFor(m => m.SpecializationRequired, "Pediatrics")Pediatrics <br />
+                            @Html.RadioButtonFor(m => m.SpecializationRequired, "Ortho")ORTHO <br />
+                            @Html.RadioButtonFor(m => m.SpecializationRequired, "Ophthalmology")Ophthalmology <br />
+
+                        </details>
+                        @*<select onchange="select_specialization()">
+                                <option value="None">None</option>
+                                <option value="General">General</option>
+                                <option value="Internal Medicine">Internal Medicine</option>
+                                <option value="Pediatrics">Pediatrics</option>
+                                <option value="Orthopedics">Orthopedics</option>
+                                <option value="Ophthalmology">Ophthalmology</option>
+                            </select>*@
+
+                    </td>
+                </tr>
+                <tr>
+                    <td height="40"><b>Doctor : </b></td>
+                    @*<td>@Html.TextBoxFor(m => m.Doctor)</td>*@
+                    @*<td height="40">@Html.DisplayName("Doctor :")</td>*@
+
+                    <td height="40">
+                        <input asp-for="Doctor" class="form-control" required />
+                        <a class="btn-link" asp-area="" asp-controller="Home" asp-action="Displaydoctor" role="button">AvailableDoctors</a>
+                    </td>
+
+
+
+                    <!--<td height="40">
+                    <select name="DOCTOR">
+                        <option value="None">None</option>
+                        <option value="Giridharan-General-(MON,WED,FRI)-(9AM-11AM)">Giridharan-General-(MON,WED,FRI)-(9AM-11AM)</option>
+                        <option value="Vishal-Ophthamology-(TUE,THUR,SAT)-(10AM-12PM)">Vishal-Ophthamology-(TUE,THUR,SAT)-(10AM-12PM)</option>
+                        <option value="Abdul-Internal Medicine-(SUN)-(3pm-5pm)">Abdul-Internal Medicine-(SUN)-(3pm-5pm)</option>
+                        <option value="Padma-Pediatrician-(SUN)-(3pm-5pm)">Padma-Pediatrician-(SUN)-(6pm-8pm)</option>-->
+                    @*<option value="Orthopedics">Orthopedics</option>
+                        <option value="Ophthalmology">Ophthalmology</option>*@
+                    <!--</select>-->
+                </tr>
+
+                <tr>
+                    <td height="60"><b>Visit Date :</b></td>
+                    @*<td>@Html.TextBoxFor(m => m.VisitDate)</td>
+                        @*<td><label asp-for="VisitDate" class="control-label"></label></td>*@
+                    <td height="60">  <input asp-for="VisitDate" type="date" id="date_picker" class="form-control" /></td>
+                </tr>
+                @*<tr>
+                    <td><b>AppointmentTime :</b></td>
+                    <td>*@
+                @*@Html.RadioButtonFor(m => m.AppointmentTime, "9AM")9AM<br/>
+                    @Html.RadioButtonFor(m => m.AppointmentTime, "10AM")10AM <br />
+                    @Html.RadioButtonFor(m => m.AppointmentTime, "3PM")3PM<br />
+                    @Html.RadioButtonFor(m => m.AppointmentTime, "2PM")2PM <br />*@
+                <tr>
+                    <td height="60"><b>Appointment Time :</b></td>
+
+                    <td height="60">  <input asp-for="AppointmentTime" type="time" class="form-control" required /></td>
+                </tr>
+
+
+
+            </table>
+        </div>
+    </center>
+
+
+
+
+
+
+
+
+
+
+    <center>
+        <br />
+        <div>
+            <input type="submit" value="FIX APPOINTMENT" style="color:darkorange" />
+        </div>
+
+    </center>
+}

@@ -1,0 +1,121 @@
+﻿@model FinalProject.Models.Adddoctor
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<style>
+    body {
+        background-image: url("https://i.pinimg.com/originals/3f/93/9a/3f939af4dda1ec2988b9c6ce3bdb3886.jpg");
+        background-size: cover;
+    }
+</style>
+@using (Html.BeginForm("DoctorAD", "Home", FormMethod.Post))
+{
+    <link href="~/css/StyleSheet3.css" rel="stylesheet" />
+    <header>
+        <div class="menu-bar" style=" border-bottom-left-radius: 100px; border-bottom-right-radius: 100px">
+            <img src="~/NewFolder/WhatsApp Image 2022-05-09 at 11.17.49 AM.jpeg" width="80" ;height="80" />
+
+            <ul>
+
+                <li> <a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="Homepage" role="button">HOMEPAGE</a> </li>
+
+                <li><a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="Addpatient" role="button">ADD PATIENT</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <li><a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="Appointment" role="button">FIX APPOINTMENT</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <li><a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="Displayappointment" role="button">CANCEL APPOINTMENT</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <br /><br />
+    <center><h1><mark>ADD DOCTOR</mark></h1></center>
+    <br />
+    <center>
+        <div style="background-color:orange;
+    border-bottom-left-radius: 100% 100%;
+
+    border-top-right-radius: 100% 100%">
+
+
+            <table  cellspacing="20" cellpadding="20">
+
+                <tr>
+
+                    <!--<td height="40">@Html.DisplayName("FirstName")</td>
+
+    <td height="40"><input asp-for="FirstName" class="form-control" required /></td>
+     <td>-->
+                    @*@Html.ValidationMessageFor(m => m.FirstName)*@<!--<span asp-validation-for="FirstName" class="text-danger"></span></td>-->
+
+                    <td height="40"><b>First Name :</b></td>
+                   
+                    <td height="40"><input asp-for="FirstName" class="form-control" required /></td>
+
+
+                </tr>
+                <tr>
+                    <td height="40"><b>Last Name :</b></td>
+                    @*<td height="40">@Html.TextBoxFor(m => m.LastName)</td>*@
+                    <td height="40"><input asp-for="LastName" class="form-control" required /></td>
+                </tr>
+                <tr>
+                    <td height="40"><b>Sex : </b></td>
+                    <td height="40">
+                        @Html.RadioButtonFor(m => m.Sex, "M")M
+                        @Html.RadioButtonFor(m => m.Sex, "F")F
+                        @Html.RadioButtonFor(m => m.Sex, "O")O
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td height="40"><b>Specialization : &nbsp;&nbsp;&nbsp;</b></td>
+                    <td height="40">
+                        <select asp-for="Specialization">
+                            <option value="None">None</option>
+                            <option value="General">General</option>
+                            <option value="Internal Medicine">Internal Medicine</option>
+                            <option value="Pediatrics">Pediatrics</option>
+                            <option value="Orthopedics">Orthopedics</option>
+                            <option value="Ophthalmology">Ophthalmology</option>
+                        </select>
+
+                    </td>
+
+                <tr>
+                    <td height="40"><b>Visiting Hours :</b></td>
+                    <td height="40">
+                        @*@Html.RadioButtonFor(m => m.VistingHours, "9AM-11AM")9AM-11AM <br />
+        @Html.RadioButtonFor(m => m.VistingHours, "10AM-12PM")10AM-12PM <br />
+        @Html.RadioButtonFor(m => m.VistingHours, "3PM-5PM")3PM-5PM <br />
+        @Html.RadioButtonFor(m => m.VistingHours, "2PM-4PM")2PM-4PM <br />*@
+                        <select name="VistingHours">
+                            <option value="None">None</option>
+                            <option value="9am-11pm"> 9am-11pm</option>
+                            <option value="11am-12pm">11am-12pm </option>
+                            <option value="1pm-3pm">1pm-3pm </option>
+                            <option value="4.30pm-6pm">4.30pm-6pm </option>
+                            <option value="6pm-7pm">6pm-7pm </option>
+                        </select>
+
+                    </td>
+
+                </tr>
+            </table>
+        </div>
+    </center>
+    <center>
+        <br />
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        <input type="submit" value="Submit" class="btn btn-dark" />  @*<input type="submit" value="Logout" onclick="location.href = '@Url.Action("Index","Home")'" class="btn btn-dark" />*@
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </center>
+}

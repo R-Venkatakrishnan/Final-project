@@ -1,0 +1,81 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<FinalProject.Models.Appointment>
+    <style>
+        body {
+            background-image: url(" https://i.pinimg.com/originals/3f/93/9a/3f939af4dda1ec2988b9c6ce3bdb3886.jpg");
+            background-size: cover;
+        }
+        table{
+           color:white
+        }
+    </style>
+
+
+    <link href="~/css/StyleSheet3.css" rel="stylesheet" />
+    <header>
+        <div class="menu-bar" style=" border-bottom-left-radius: 100px; border-bottom-right-radius: 100px">
+            <img src="~/NewFolder/WhatsApp Image 2022-05-09 at 11.17.49 AM.jpeg" width="80" ;height="80" />
+
+            <ul>
+
+
+                <li> <a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="Homepage" role="button">HOMEPAGE</a> </li>
+
+                <li><a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="Addddoctor" role="button">ADD Doctor</a></li>
+                <li><a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="Addpatient" role="button">ADD PATIENT</a></li>
+                <li><a class="btn btn-light" asp-area="" asp-controller="Home" asp-action="Appointment" role="button">FIX APPOINTMENT</a></li>
+            </ul>
+        </div>
+    </header>
+    <br />
+    <center>
+        <h1> Appointment Information</h1><br /><br />
+        <table class="table" style="background-color:lightgray" cellspacing="20" cellpadding="20" border="3">
+            <tr>
+                <td><b>@Html.DisplayName("AppointmentID")</b> </td>
+                <td><b>@Html.DisplayName("PatientID")</b> </td>
+                <td><b>@Html.DisplayName("SpecializationRequired")</b></td>
+                <td><b>@Html.DisplayName("Doctor")</b></td>
+                <td><b>@Html.DisplayName("VisitDate")</b></td>
+                <td><b>@Html.DisplayName("AppointmentTime")</b></td>
+
+            </tr>
+
+            @foreach (var item in Model)
+            {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelitem => item.AppointmentID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.PatientID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.SpecializationRequired)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.Doctor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.VisitDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.AppointmentTime)
+            </td>
+            <td>
+                @*@using (Html.BeginForm(", "Home", FormMethod.Post))
+            {
+                <input type="submit" value="Cancel" />
+
+            }*@
+                <a asp-action="Deleteda" asp-route-id="@item.AppointmentID" class=" btn-light">Cancel</a>
+            </td>
+        </tr>
+            }
+
+        </table>
+    </center>
