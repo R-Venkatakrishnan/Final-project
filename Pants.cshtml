@@ -1,0 +1,68 @@
+﻿@model project2.Models.Product
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<link href="~/css/StyleSheet.css" rel="stylesheet" />
+<div>
+    <img src="~/WhatsApp Image 2022-05-26 at 8.53.27 PM.jpeg" style="background-color:white" width="80" height="50" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+</div>
+<hr />
+<div class="topnav">
+    <a asp-area="" asp-controller="Home" asp-action="Homepage" role="button">Home</a>
+    <a asp-area="" asp-controller="Home" asp-action="Shirts" role="button">Shirts</a>
+    <a class="active" asp-area="" asp-controller="Home" asp-action="Pants" role="button">Pants</a>
+    <a asp-area="" asp-controller="Home" asp-action="Suits" role="button">Suits</a>
+    <a asp-area="" asp-controller="Home" asp-action="landingpage" role="button">Logout</a>
+</div>
+<br />
+<br />
+<table>
+    <tr>
+        <td width="100" style="font-size:20px;color:white">
+            <img src="https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/13765486/2022/4/7/f3f3e792-da54-4b16-bc4e-f6758ce5310c1649330142516INVICTUSMenBlueSolidFormalTrousers2.jpg  " width="250" height="300" />
+        <td>
+
+            <h1>Urbano Fashion Formal Trousers</h1>
+            <h4>(Royal Blue)</h4>
+        </td>
+    </tr>
+</table>
+<br />
+<table>
+    <tr>
+        <td>
+            <h3> ₹ 839  <input type="submit" value="Buynow" class="btn btn-primary" /> </h3>
+        </td>
+    </tr>
+</table>
+<hr />
+<br />
+<br />
+@using(Html.BeginForm("Bill","Home",FormMethod.Post))
+{
+<table>
+    <tr>
+        <td width="100" style="font-size:20px;color:white">
+            <img src="https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/1758520/2017/3/9/11489048805059-WROGN-Men-Blue-Slim-Fit-Mid-Rise-Clean-Look-Jeans-1581489048804772-1.jpg " width="250" height="300" />
+        <td>
+
+            <h1>Wrongler Mens Jeans</h1>
+            <h4>(Bleech Gray)</h4>
+            <input type="checkbox" value="28" />
+            <input type="checkbox" value="30" />
+            <input type="checkbox" value="32" />
+        </td>
+    </tr>
+</table>
+<br />
+<table>
+    <tr>
+        <td>
+            <h3> ₹ 1159  <a class="btn btn-primary" type="submit" asp-controller="Home" asp-action="Bill"  asp-route-id="101"></a></h3>
+        </td>
+    </tr>
+</table>
+}
